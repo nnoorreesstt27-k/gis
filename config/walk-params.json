@@ -1,0 +1,48 @@
+{
+  "version": "2026-11-19",
+  "slope_model": "tobler_normalized",
+  "slope_model_formula": "v = v0 * exp(-3.5*|S+0.05|) / exp(-3.5*0.05) / (1 + k_up*max(0,S))",
+  "slope_clip_abs": 0.30,
+  "offnetwork": { "max_distance_m": 40, "speed_factor": 0.8 },
+  "snap": { "warn_distance_m": 50, "max_distance_m": 150 },
+  "isochrone": { "thresholds_min": [5, 10, 15, 20, 30], "cell_m": 15, "sample_step_m": 8, "min_island_m2": 2000, "fill_holes_max_m2": 6000 },
+  "modes": {
+    "walk": {
+      "label": "通常徒歩",
+      "speed_kmh": 4.0,
+      "k_up": 0.0,
+      "stairs_speed_factor": 0.5,
+      "stairs_penalty_s": 5,
+      "crossing_penalty_s": 10,
+      "stairs_allowed": true
+    },
+    "elderly": {
+      "label": "高齢者徒歩",
+      "speed_kmh": 2.5,
+      "speed_range_kmh": [2.0, 3.5],
+      "k_up": 3.0,
+      "stairs_speed_factor": 0.3,
+      "stairs_penalty_s": 20,
+      "crossing_penalty_s": 15,
+      "stairs_allowed": true
+    },
+    "wheelchair": {
+      "label": "車いす（第3段階・非公開）",
+      "speed_kmh": 3.0,
+      "k_up": 6.0,
+      "stairs_speed_factor": 0,
+      "stairs_penalty_s": 0,
+      "crossing_penalty_s": 15,
+      "stairs_allowed": false
+    }
+  },
+  "route_variants": {
+    "low_slope": { "threshold": 0.04, "weight": 20 }
+  },
+  "limitations": [
+    "Toblerの式は健常成人の山道歩行データに基づく。高齢者の上り補正係数 k_up は政策的な安全側の仮定値であり、学術的に確定した値ではない。",
+    "信号待ち時間の実測、歩道の有無・幅員、休憩、天候、個人の体力差は反映していない。",
+    "標高は国土地理院DEM（地表面）。歩道橋・擁壁上の通路などで勾配に誤差が生じうる。",
+    "OpenStreetMapに登録されていない通路・階段は経路に含まれない。"
+  ]
+}

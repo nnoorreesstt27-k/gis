@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "estate_id": "takakuradai",
+    "generated_at": "2026-11-19T12:25:59.339Z",
+    "generator": "pipeline/build-network-browser.js v0.1",
+    "osm_base": "2026-11-19T12:24:51Z",
+    "dem_sources": [
+      "国土地理院 DEM5A（dem5a_png z15）",
+      "国土地理院 DEM10B（dem_png z14）※DEM5A欠損時"
+    ],
+    "bbox": [
+      135.075,
+      34.632,
+      135.135,
+      34.68
+    ],
+    "node_count": 29637,
+    "edge_count": 33671,
+    "dem_missing_nodes": 0,
+    "notes": [
+      "DEM10Bで補完したノード: 5",
+      "除外したウェイ（歩行不可）: 156"
+    ]
+  },
+  "counts": {
+    "steps_edges": 733,
+    "crossing_nodes": 891,
+    "dem_tiles": 50
+  },
+  "steepest_edges_top10": [
+    {
+      "way": 627560215,
+      "slope": 0.721,
+      "length_m": 13.46
+    },
+    {
+      "way": 399568382,
+      "slope": 0.72,
+      "length_m": 17.09
+    },
+    {
+      "way": 165600490,
+      "slope": 0.659,
+      "length_m": 10.47
+    },
+    {
+      "way": 201862965,
+      "slope": 0.583,
+      "length_m": 11.33
+    },
+    {
+      "way": 201730066,
+      "slope": 0.571,
+      "length_m": 13.65
+    },
+    {
+      "way": 627560241,
+      "slope": 0.556,
+      "length_m": 13.84
+    },
+    {
+      "way": 201730066,
+      "slope": 0.554,
+      "length_m": 11.2
+    },
+    {
+      "way": 583380872,
+      "slope": 0.501,
+      "length_m": 10.77
+    },
+    {
+      "way": 580849732,
+      "slope": 0.5,
+      "length_m": 12
+    },
+    {
+      "way": 813428120,
+      "slope": 0.5,
+      "length_m": 11.39
+    }
+  ]
+}

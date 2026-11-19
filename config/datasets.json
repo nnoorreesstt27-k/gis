@@ -1,0 +1,93 @@
+[
+  {
+    "dataset_name": "OpenStreetMap 道路・歩行者通路・階段",
+    "provider": "OpenStreetMap contributors（Overpass API経由）",
+    "source_url": "https://www.openstreetmap.org/copyright",
+    "license": "ODbL 1.0（© OpenStreetMap contributors の表示が必要）",
+    "acquired_date": "2026-11-19（ブラウザ版生成スクリプトで取得）",
+    "reference_date": "Overpass の osm3s.timestamp_osm_base を自動記録",
+    "update_frequency": "随時（本システムでは月1回再生成を推奨）",
+    "spatial_unit": "ノード・ウェイ",
+    "coordinate_system": "WGS84（EPSG:4326）",
+    "processing_method": "highway=* を抽出し歩行不可（motorway等・foot=no・access=private）を除外。隣接ノード間を辺としてグラフ化。",
+    "limitations": "未登録の通路・階段は経路に含まれない。私有地の通路が誤って公開通路として登録されている可能性がある。"
+  },
+  {
+    "dataset_name": "標高タイル DEM5A（5mメッシュ）／DEM10B（10mメッシュ）",
+    "provider": "国土地理院",
+    "source_url": "https://maps.gsi.go.jp/development/ichiran.html",
+    "license": "国土地理院コンテンツ利用規約（出典の明示により利用可）",
+    "acquired_date": "network.json 生成時に自動記録",
+    "reference_date": "各タイルの整備年度（国土地理院公表値）",
+    "update_frequency": "不定期",
+    "spatial_unit": "5m／10m グリッド",
+    "coordinate_system": "WGS84 ウェブメルカトル タイル（標高は東京湾平均海面）",
+    "processing_method": "ノード位置で双線形補間。DEM5A欠損時はDEM10B。橋・トンネルは両端から線形補間、ウェイ内3点移動平均。",
+    "limitations": "地表面標高のため歩道橋・擁壁上の通路で誤差。造成後の地形改変が未反映の場合がある。"
+  },
+  {
+    "dataset_name": "地理院タイル（淡色地図）",
+    "provider": "国土地理院",
+    "source_url": "https://maps.gsi.go.jp/development/ichiran.html",
+    "license": "国土地理院コンテンツ利用規約（出典：地理院タイル）",
+    "acquired_date": "表示時に取得",
+    "reference_date": "随時更新",
+    "update_frequency": "随時",
+    "spatial_unit": "ラスタタイル",
+    "coordinate_system": "ウェブメルカトル（EPSG:3857）",
+    "processing_method": "MapLibreのラスタ調整で反転・減彩し暗色化（表示のみ）",
+    "limitations": "背景表示専用。計算には使用しない。"
+  },
+  {
+    "dataset_name": "住所検索API（丁目・街区代表点）",
+    "provider": "国土地理院",
+    "source_url": "https://msearch.gsi.go.jp/address-search/AddressSearch",
+    "license": "国土地理院コンテンツ利用規約",
+    "acquired_date": "2026-11-19",
+    "reference_date": "2026-11-19",
+    "update_frequency": "随時",
+    "spatial_unit": "丁目・街区（番）代表点",
+    "coordinate_system": "WGS84（EPSG:4326）",
+    "processing_method": "住所文字列で検索し返却座標を採用（登録地点・目的地・暫定区域の作成）",
+    "limitations": "施設入口ではなく街区の代表点。数十mの誤差がありうる。"
+  },
+  {
+    "dataset_name": "目的地情報（名称・住所・開館時間）",
+    "provider": "神戸市、各施設・公的機関のWeb掲載情報",
+    "source_url": "destinations.json の各行 source_url を参照",
+    "license": "各サイトの利用規約に従い、名称・住所・時間等の事実情報のみ利用",
+    "acquired_date": "2026-11-19",
+    "reference_date": "各行 source_date を参照",
+    "update_frequency": "年1回以上の確認を推奨",
+    "spatial_unit": "施設",
+    "coordinate_system": "WGS84（EPSG:4326）",
+    "processing_method": "公開情報で名称・住所を確認し、住所検索APIで位置を付与",
+    "limitations": "開館時間は一部のみ確認。バリアフリー情報は未確認。"
+  },
+  {
+    "dataset_name": "神戸市バス GTFS-JP",
+    "provider": "神戸市交通局（予定）",
+    "source_url": "未確認",
+    "license": "未確認",
+    "acquired_date": "未取得",
+    "reference_date": "—",
+    "update_frequency": "ダイヤ改正時",
+    "spatial_unit": "停留所・便",
+    "coordinate_system": "WGS84",
+    "processing_method": "第2段階でOpenTripPlannerに投入予定",
+    "limitations": "未取得のためバス＋徒歩は算出しない。2026-08-01に須磨エリアの路線見直しあり。"
+  },
+  {
+    "dataset_name": "令和2年国勢調査 小地域境界・町丁別年齢別人口（高倉台一〜八丁目）",
+    "provider": "総務省統計局（e-Stat）",
+    "source_url": "https://www.e-stat.go.jp/gis/statmap-search?page=1&type=2&aggregateUnitForBoundary=A&toukeiCode=00200521&toukeiYear=2020&serveyId=A002005212020&prefCode=28&coordsys=1&format=shape&datum=2000",
+    "license": "政府標準利用規約（第2.0版）準拠（出典明示）",
+    "acquired_date": "2026-11-19",
+    "reference_date": "2020-10-01",
+    "update_frequency": "5年ごと",
+    "spatial_unit": "町丁・字（小地域）",
+    "coordinate_system": "JGD2000 緯度経度",
+    "processing_method": "須磨区の境界Shapefileから高倉台一〜八丁目を抽出し、T001082（年齢5歳階級別人口）の総数・65歳以上・75歳以上を結合。団地区域は8町丁を結合して作成。到達圏内人口は町丁内一様分布を仮定した面積按分。",
+    "limitations": "2020年10月時点。町丁内の人口分布は一様と仮定（住宅の位置は考慮しない）。高倉台以外の町丁の人口は集計対象外。250mメッシュ人口は未使用。"
+  }
+]

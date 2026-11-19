@@ -1,0 +1,7 @@
+{
+  "default": "takakuradai",
+  "estates": [
+    { "id": "takakuradai", "name": "高倉台団地", "config": "config/estates/takakuradai.json" }
+  ],
+  "_how_to_add": "西神住宅団地・君影団地等は config/estates/<id>.json と data/<id>/ を追加し、ここに1行追記する。コード変更は不要。"
+}

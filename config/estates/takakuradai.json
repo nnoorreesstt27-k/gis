@@ -1,0 +1,38 @@
+{
+  "id": "takakuradai",
+  "name": "高倉台団地",
+  "municipality": "神戸市須磨区",
+  "center": [
+    135.105,
+    34.656
+  ],
+  "initialZoom": 14.6,
+  "network_bbox": [
+    135.075,
+    34.632,
+    135.135,
+    34.68
+  ],
+  "network_bbox_note": "暫定区域の外接矩形から約2.5km（30分×最大徒歩速度相当）拡張",
+  "boundary": "data/takakuradai/boundary.json",
+  "chome": "data/takakuradai/chome.json",
+  "destinations": "data/takakuradai/destinations.json",
+  "registered_points": "data/takakuradai/registered-points.json",
+  "network": "data/takakuradai/network.json",
+  "transit": {
+    "status": "unavailable",
+    "message": "神戸市交通局のGTFS-JPを取得できていないため、バス＋徒歩の所要時間は算出しません。",
+    "known_facts": [
+      {
+        "text": "高倉台地区の停留所（高倉台、高倉台5丁目、高倉台8丁目、高倉台南口 等）の時刻表PDFが神戸市交通局から公開されている（71・72・75系統）。",
+        "source_url": "https://kotsu.city.kobe.lg.jp/wp-content/uploads/nextyear/053802.pdf",
+        "checked": "2026-11-19"
+      },
+      {
+        "text": "2026年8月1日に須磨エリアを中心とした市バス路線の見直しが実施された。",
+        "source_url": "https://www.city.kobe.lg.jp/a71810/474381635258.html",
+        "checked": "2026-11-19"
+      }
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "name": "地理院タイル 淡色地図（暗色調整）",
+  "tiles": [
+    "https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png"
+  ],
+  "tileSize": 256,
+  "minzoom": 5,
+  "maxzoom": 18,
+  "attribution": "<a href=\"https://maps.gsi.go.jp/development/ichiran.html\" target=\"_blank\" rel=\"noopener\">地理院タイル</a>",
+  "background": "#0A1626",
+  "raster_paint": {
+    "raster-opacity": 0.36,
+    "raster-saturation": -1,
+    "raster-contrast": 0.25,
+    "raster-brightness-min": 0.0,
+    "raster-brightness-max": 0.42
+  },
+  "_note": "背景地図の見え方はここで調整できる（コード変更不要）。APIキー不要のサービスのみ使用。",
+  "local_tiles": {
+    "tiles": [
+      "tz{z}/{x}/{y}.png"
+    ],
+    "minzoom": 12,
+    "maxzoom": 15,
+    "bounds": [
+      135.075,
+      34.632,
+      135.135,
+      34.68
+    ],
+    "note": "団地周辺の地理院タイル（淡色地図）を同梱（2026-11-19取得）。外部タイルを読めない環境でも背景地図を表示する。フォルダはズームごとに tz12〜tz17。"
+  },
+  "local_tiles_hi": {
+    "tiles": [
+      "tz{z}/{x}/{y}.png"
+    ],
+    "minzoom": 17,
+    "maxzoom": 17,
+    "bounds": [
+      135.093,
+      34.648,
+      135.118,
+      34.663
+    ],
+    "note": "団地中心部のみズーム17"
+  },
+  "local_tiles_mid": {
+    "tiles": [
+      "tz{z}/{x}/{y}.png"
+    ],
+    "minzoom": 16,
+    "maxzoom": 16,
+    "bounds": [
+      135.076904,
+      34.633208,
+      135.131836,
+      34.678394
+    ],
+    "note": "ズーム16は団地周辺の100枚のみ"
+  }
+}
